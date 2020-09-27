@@ -54,6 +54,11 @@ export default function Layout({ children }: Props) {
 			</nav>
 			<main>{children}</main>
 			<Footer />
+			<script
+				data-goatcounter="https://thisweekingodot.goatcounter.com/count"
+				async
+				src="//gc.zgo.at/count.js"
+			></script>
 		</div>
 	);
 }
