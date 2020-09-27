@@ -1,0 +1,16 @@
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+@tailwind utilities;
+
+html {
+	@apply bg-gray-100 font-body font-light;
+}
+
+.next-shadow + button {
+	margin-left: -10px;
+}
+.next-shadow:focus + button {
+	@apply shadow-md;
+}

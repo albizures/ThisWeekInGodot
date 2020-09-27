@@ -1,0 +1,165 @@
+.post h1 {
+	@apply m-0 mt-8 mb-3 text-3xl leading-8 font-heading;
+}
+
+.post h2,
+.post h3,
+.post h4,
+.post h5,
+.post h6 {
+	@apply m-0 mt-8 leading-8 font-heading;
+}
+
+.post h2 {
+	@apply text-2xl;
+}
+
+.post h2::before {
+	content: '#';
+	@apply absolute -ml-4 font-light text-xl text-gray-500 hidden;
+}
+
+.post h3 {
+	@apply text-xl;
+}
+
+.post h4 {
+	@apply text-lg;
+}
+
+.post h5 {
+	@apply text-sm;
+}
+
+.post h6 {
+	@apply text-xs;
+}
+
+.post time {
+	@apply text-gray-500;
+}
+
+.post p {
+	@apply m-0 mt-4;
+}
+.post .twitter-tweet {
+	@apply pt-6;
+}
+
+.post .youtube-container,
+.post .instagram-media {
+	@apply mt-6;
+}
+
+.post .youtube-container {
+	@apply relative w-full h-0 overflow-hidden;
+	padding-bottom: 56.25%;
+}
+
+.post .youtube-container iframe {
+	@apply w-full h-full absolute top-0 left-0;
+}
+
+.post {
+	@apply font-light leading-6;
+}
+
+.post mark {
+	@apply bg-orange-200 rounded p-1 text-sm;
+}
+
+.post a {
+	@apply text-indigo-800 underline;
+}
+
+.post code {
+	@apply italic rounded text-sm m-0 bg-gray-200 p-1;
+	font-family: 'Ubuntu Mono', monospace;
+}
+
+.post pre code {
+	@apply bg-transparent p-0;
+}
+
+.post blockquote {
+	@apply m-4 text-gray-600 text-lg;
+}
+
+.post cite::before {
+	content: '—';
+	@apply inline-block mr-1;
+}
+
+.post pre {
+	background-color: rgba(27, 31, 35, 0.05);
+	@apply block leading-6 p-1 overflow-auto m-0 mt-6;
+}
+
+.post table {
+	max-width: 100%;
+	border-spacing: 0;
+	margin-top: 1.5rem;
+}
+
+.post table thead {
+	background: #f7f7f7;
+}
+
+.post table th {
+	font-weight: 500;
+}
+
+.post table th,
+.post table td {
+	padding: 0.5em 1em;
+	border: 1px double #eee;
+}
+
+.post ul {
+	@apply list-disc;
+}
+
+.post ol {
+	@apply list-decimal;
+}
+
+.post ol,
+.post ul {
+	padding: 0 0 0 1.5rem;
+	margin: 1.5rem 0 0 0;
+}
+
+.post ol li,
+.post ul li {
+	line-height: 1.5rem;
+}
+
+.post li ol,
+.post li ul {
+	margin: 0;
+}
+
+.post abbr[title] {
+	text-decoration: underline double;
+}
+
+.post kbd {
+	font-family: 'Ubuntu Mono', monospace;
+}
+
+.post img {
+	width: 100%;
+}
+
+@media (min-width: 769px) {
+	.post h2,
+	.post h3,
+	.post h4,
+	.post h5 {
+		position: relative;
+	}
+
+	.post h2::before {
+		display: block;
+	}
+}
