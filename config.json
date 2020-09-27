@@ -1,19 +1,19 @@
 {
-	"base_url": "https://thisweekingodot.netlify.app",
-	"site_title": "This Week in Godot",
-	"site_description": "Find out what happened this week in Godot",
-	"site_keywords": [
-		{
-			"keyword": "Godot"
-		},
-		{
-			"keyword": "Newsletter"
-		},
-		{
-			"keyword": "Gamedev"
-		}
-	],
-	"posts_per_page": 5,
-	"twitter_account": "@ThisWeekInGodot",
-	"github_account": "albizures/ThisWeekInGodot"
+  "base_url": "https://thisweekingodot.com/",
+  "site_title": "This Week in Godot",
+  "site_description": "Find out what happened this week in Godot",
+  "site_keywords": [
+    {
+      "keyword": "Godot"
+    },
+    {
+      "keyword": "Newsletter"
+    },
+    {
+      "keyword": "Gamedev"
+    }
+  ],
+  "posts_per_page": 5,
+  "twitter_account": "@ThisWeekInGodot",
+  "github_account": "albizures/ThisWeekInGodot"
 }
