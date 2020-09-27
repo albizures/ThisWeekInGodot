@@ -14,3 +14,5 @@ html {
 .next-shadow:focus + button {
 	@apply shadow-md;
 }
+
+@import 'post.css';
