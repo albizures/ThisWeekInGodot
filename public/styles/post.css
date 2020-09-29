@@ -42,6 +42,11 @@
 .post p {
 	@apply m-0 mt-4;
 }
+
+.post .draft-banner p {
+	@apply m-0;
+}
+
 .post .twitter-tweet {
 	@apply pt-6;
 }

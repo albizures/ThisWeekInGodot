@@ -6,6 +6,7 @@ import BasicMeta from '../components/meta/BasicMeta';
 import JsonLdMeta from '../components/meta/JsonLdMeta';
 import OpenGraphMeta from '../components/meta/OpenGraphMeta';
 import TwitterCardMeta from '../components/meta/TwitterCardMeta';
+import { DraftBanner } from '../components/DraftBanner';
 import { getAuthor } from '../lib/authors';
 import { getTag } from '../lib/tags';
 
@@ -17,6 +18,7 @@ type Props = {
 	tags: string[];
 	author: string;
 };
+
 export default function Index({
 	title,
 	date,
@@ -27,6 +29,9 @@ export default function Index({
 }: Props) {
 	const keywords = tags.map((it) => getTag(it).name);
 	const authorName = getAuthor(author).name;
+
+	const isDraft = tags.includes('draft');
+
 	return ({ children: content }) => {
 		return (
 			<Layout>
@@ -55,6 +60,7 @@ export default function Index({
 					description={description}
 				/>
 				<div className={'post'}>
+					{isDraft && <DraftBanner />}
 					<article>
 						<header>
 							<h1>{title}</h1>

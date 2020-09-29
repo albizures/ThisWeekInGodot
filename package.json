@@ -1,41 +1,41 @@
 {
-  "name": "this-week-in-godot",
-  "version": "0.1.1",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "export": "next build && next export -o ./dist",
-    "test": "jest"
-  },
-  "dependencies": {
-    "@mapbox/rehype-prism": "^0.5.0",
-    "@svgr/webpack": "^5.4.0",
-    "@types/js-yaml": "^3.12.5",
-    "date-fns": "^2.11.1",
-    "gray-matter": "^4.0.2",
-    "js-yaml": "^3.14.0",
-    "next": "9.5.1",
-    "next-mdx-enhanced": "^3.1.0",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-instagram-embed": "^1.5.0",
-    "react-schemaorg": "^1.2.0",
-    "react-twitter-embed": "^3.0.3",
-    "react-youtube": "^7.11.3",
-    "schema-dts": "^0.6.0"
-  },
-  "devDependencies": {
-    "@albizures/prettier-config": "^1.0.0",
-    "@types/jest": "^26.0.9",
-    "@types/node": "^13.11.0",
-    "@types/react": "^16.9.32",
-    "jest": "^26.3.0",
-    "postcss-preset-env": "^6.7.0",
-    "tailwindcss": "^1.8.10",
-    "ts-jest": "^26.2.0",
-    "typescript": "^3.8.3",
-    "yaml-loader": "^0.6.0"
-  }
+	"name": "this-week-in-godot",
+	"version": "0.1.1",
+	"private": true,
+	"scripts": {
+		"dev": "next dev -p 1234",
+		"build": "next build",
+		"start": "next start",
+		"export": "next build && next export -o ./dist",
+		"test": "jest"
+	},
+	"dependencies": {
+		"@mapbox/rehype-prism": "^0.5.0",
+		"@svgr/webpack": "^5.4.0",
+		"@types/js-yaml": "^3.12.5",
+		"date-fns": "^2.11.1",
+		"gray-matter": "^4.0.2",
+		"js-yaml": "^3.14.0",
+		"next": "9.5.1",
+		"next-mdx-enhanced": "^3.1.0",
+		"react": "16.13.1",
+		"react-dom": "16.13.1",
+		"react-instagram-embed": "^1.5.0",
+		"react-schemaorg": "^1.2.0",
+		"react-twitter-embed": "^3.0.3",
+		"react-youtube": "^7.11.3",
+		"schema-dts": "^0.6.0"
+	},
+	"devDependencies": {
+		"@albizures/prettier-config": "^1.0.0",
+		"@types/jest": "^26.0.9",
+		"@types/node": "^13.11.0",
+		"@types/react": "^16.9.32",
+		"jest": "^26.3.0",
+		"postcss-preset-env": "^6.7.0",
+		"tailwindcss": "^1.8.10",
+		"ts-jest": "^26.2.0",
+		"typescript": "^3.8.3",
+		"yaml-loader": "^0.6.0"
+	}
 }

@@ -23,11 +23,17 @@ export default function PostList(props: Props) {
 			<h3 className="text-lg font-heading">Past Issues</h3>
 			<div className="mt-2 border-t-2 border-b-2 py-2 border-gray-400">
 				<ul className={'post-list'}>
-					{posts.map((it, i) => (
-						<li key={i}>
-							<PostItem post={it} />
-						</li>
-					))}
+					{posts.map((it, i) => {
+						if (it.tags && it.tags.includes('draft')) {
+							return null;
+						}
+
+						return (
+							<li key={i}>
+								<PostItem post={it} />
+							</li>
+						);
+					})}
 				</ul>
 
 				{withPagination ? (
