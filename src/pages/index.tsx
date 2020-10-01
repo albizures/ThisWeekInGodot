@@ -31,27 +31,53 @@ const Index: React.FC<Props> = (props) => {
 					Find out what happened this week in Godot!
 				</h2>
 				<form
-					className="flex justify-center mt-4"
-					action="https://gmail.us20.list-manage.com/subscribe/post?u=8fa6b4bcc2abca5ae9ba887e6&amp;id=81dcb5ba43"
+					className="p-6 mt-4 rounded bg-gray-200"
+					action="https://app.convertkit.com/forms/1707507/subscriptions"
 					method="post"
-					name="mc-embedded-subscribe-form"
-					target="_blank"
-					noValidate
 				>
-					<label className="sr-only" htmlFor="email">
-						Enter your email
-					</label>
-					<input
-						className="next-shadow py-2 pr-12 pl-4 rounded-full -mr-8 outline-none border focus:shadow-md focus:border-blue-700 bg-gray-300 focus:bg-transparent"
-						type="email"
-						id="email"
-						required
-						name="EMAIL"
-						placeholder="Enter your email"
-					/>
-					<button className="rounded-full border border-blue-700 bg-blue-700 text-white px-4 py-2">
-						Subscribe
-					</button>
+					<div className="grid grid-cols-2 gap-5">
+						<div>
+							<label
+								className="block text-base font-bold leading-5 text-gray-700"
+								htmlFor="first_name"
+							>
+								First name
+							</label>
+							<div className="mt-1 relative rounded-md shadow-sm">
+								<input
+									className="appearance-none border border-gray-400 px-3 py-2 rounded focus:shadow-outline-indigo focus:border-indigo-300 block w-full sm:text-base sm:leading-5"
+									type="text"
+									id="first_name"
+									required
+									name="fields[first_name]"
+									placeholder="Preferred name"
+								/>
+							</div>
+						</div>
+						<div>
+							<label
+								className="block text-base font-bold leading-5 text-gray-700"
+								htmlFor="email_address"
+							>
+								Email
+							</label>
+							<div className="mt-1 relative rounded-md shadow-sm">
+								<input
+									className="appearance-none border border-gray-400 px-3 py-2 rounded focus:shadow-outline-indigo focus:border-indigo-300 block w-full sm:text-base sm:leading-5"
+									type="email"
+									id="email_address"
+									required
+									name="email_address"
+									placeholder="you@example.com"
+								/>
+							</div>
+						</div>
+					</div>
+					<div className="w-full flex items-center justify-center mt-5">
+						<button className="rounded border border-blue-700 bg-blue-700 text-white px-4 py-2">
+							Subscribe
+						</button>
+					</div>
 				</form>
 				<div>
 					<PostList posts={posts} tags={tags} pagination={pagination} />
