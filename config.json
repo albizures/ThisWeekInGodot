@@ -1,7 +1,7 @@
 {
-	"base_url": "https://thisweekingodot.netlify.app",
+	"base_url": "https://thisweekingodot.com",
 	"site_title": "This Week in Godot",
-	"site_description": "Find out what happened this week in Godot",
+	"site_description": "Find out what happened this week in Godot. A simple weekly newsletter to stay tuned with news, tutorials, game and demo releases and more",
 	"site_keywords": [
 		{
 			"keyword": "Godot"

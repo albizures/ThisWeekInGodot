@@ -30,6 +30,10 @@ const Index: React.FC<Props> = (props) => {
 				<h2 className="text-center text-2xl font-light font-heading">
 					Find out what happened this week in Godot!
 				</h2>
+				<h4 className="mx-8 text-center italic">
+					A simple weekly newsletter to stay tuned with news, tutorials, game
+					and demo releases and more.
+				</h4>
 				<form
 					className="p-6 mt-4 rounded bg-gray-200"
 					action="https://app.convertkit.com/forms/1707507/subscriptions"
