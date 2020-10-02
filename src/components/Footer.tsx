@@ -1,6 +1,7 @@
 import React from 'react';
 import { ExternalLink } from './Link';
 import config from '../lib/config';
+import Link from 'next/link';
 
 export const Footer = () => {
 	return (
@@ -13,15 +14,15 @@ export const Footer = () => {
 					<ExternalLink href={`https://github.com/${config.github_account}`}>
 						GitHub
 					</ExternalLink>
-					<ExternalLink href={`https://github.com/${config.github_account}`}>
-						RSS
-					</ExternalLink>
-					<ExternalLink href={`https://github.com/${config.github_account}`}>
+					<Link href="/rss.xml">
+						<a className="underline">RSS</a>
+					</Link>
+					{/* <ExternalLink href={`https://github.com/${config.github_account}`}>
 						Atom Feed
-					</ExternalLink>
-					<ExternalLink href={`https://github.com/${config.github_account}`}>
-						Privacy Policy
-					</ExternalLink>
+					</ExternalLink> */}
+					<Link href="/privacy-policy">
+						<a className="underline">Privacy Policy</a>
+					</Link>
 				</div>
 				<p className="text-center my-2">
 					© 2020 by Jose Albizures. All rights reserved.

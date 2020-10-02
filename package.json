@@ -24,6 +24,7 @@
 		"react-schemaorg": "^1.2.0",
 		"react-twitter-embed": "^3.0.3",
 		"react-youtube": "^7.11.3",
+		"rss": "^1.2.2",
 		"schema-dts": "^0.6.0"
 	},
 	"devDependencies": {
@@ -31,6 +32,7 @@
 		"@types/jest": "^26.0.9",
 		"@types/node": "^13.11.0",
 		"@types/react": "^16.9.32",
+		"@types/rss": "^0.0.28",
 		"jest": "^26.3.0",
 		"postcss-preset-env": "^6.7.0",
 		"tailwindcss": "^1.8.10",

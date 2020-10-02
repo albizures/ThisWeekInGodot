@@ -45,14 +45,14 @@ export default function Layout({ children }: Props) {
 							</ExternalLink>
 						</li>
 						<li>
-							<ExternalLink href="javascript:alert('not implemented')">
-								RSS
-							</ExternalLink>
+							<Link href="/rss.xml">
+								<a className="underline">RSS</a>
+							</Link>
 						</li>
 					</ul>
 				</div>
 			</nav>
-			<main>{children}</main>
+			<main className="mb-4">{children}</main>
 			<Footer />
 			<script
 				data-goatcounter="https://thisweekingodot.goatcounter.com/count"
