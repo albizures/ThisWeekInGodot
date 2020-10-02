@@ -77,6 +77,18 @@
 	@apply text-indigo-800 underline;
 }
 
+.post li a {
+	@apply text-blue-700 no-underline;
+}
+
+.post li a:hover {
+	@apply text-blue-600 underline;
+}
+
+.post li a:visited {
+	@apply text-indigo-800;
+}
+
 .post code {
 	@apply italic rounded text-sm m-0 bg-gray-200 p-1;
 	font-family: 'Ubuntu Mono', monospace;
