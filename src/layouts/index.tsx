@@ -59,8 +59,8 @@ export default function Index({
 					author={authorName}
 					description={description}
 				/>
+				{isDraft && <DraftBanner />}
 				<div className={'post'}>
-					{isDraft && <DraftBanner />}
 					<article>
 						<header>
 							<h1>{title}</h1>
@@ -69,7 +69,6 @@ export default function Index({
 									<Date date={date} />
 									<Author author={getAuthor(author)} />
 								</div>
-								<div></div>
 							</div>
 						</header>
 						<div className="mb-8">{content}</div>

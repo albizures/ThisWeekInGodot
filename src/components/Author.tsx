@@ -1,3 +1,4 @@
+import React from 'react';
 import { AuthorContent } from '../lib/authors';
 
 type Props = {

@@ -1,3 +1,4 @@
+import React from 'react';
 import { format, formatISO } from 'date-fns';
 
 type Props = {

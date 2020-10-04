@@ -1,8 +1,9 @@
 /* purgecss start ignore */
-@tailwind base;
-@tailwind components;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
 /* purgecss end ignore */
-@tailwind utilities;
+@import 'tailwindcss/utilities';
+@import './post.css';
 
 html {
 	@apply bg-gray-100 font-body font-light;
@@ -14,5 +15,3 @@ html {
 .next-shadow:focus + button {
 	@apply shadow-md;
 }
-
-@import 'post.css';

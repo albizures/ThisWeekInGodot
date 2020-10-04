@@ -7,7 +7,10 @@
 		"build": "next build",
 		"start": "next start",
 		"export": "next build && next export -o ./dist",
-		"test": "jest"
+		"test": "jest",
+		"generate": "yarn generate:css && yarn generate:html",
+		"generate:html": "ts-node --project tsconfig.email.json ./src/generate-email.tsx",
+		"generate:css": "NODE_ENV=email postcss public/styles/global.css -o dist/styles.css"
 	},
 	"dependencies": {
 		"@mapbox/rehype-prism": "^0.5.0",
@@ -29,14 +32,28 @@
 	},
 	"devDependencies": {
 		"@albizures/prettier-config": "^1.0.0",
+		"@fullhuman/postcss-purgecss": "^3.0.0",
+		"@mdx-js/mdx": "^1.6.18",
+		"@mdx-js/react": "^1.6.18",
+		"@mdx-js/runtime": "^1.6.18",
 		"@types/jest": "^26.0.9",
+		"@types/mdx-js__react": "^1.5.3",
 		"@types/node": "^13.11.0",
 		"@types/react": "^16.9.32",
+		"@types/react-dom": "^16.9.8",
 		"@types/rss": "^0.0.28",
+		"inline-css": "^2.6.3",
 		"jest": "^26.3.0",
+		"postcss": "^8.1.1",
+		"postcss-cli": "^8.0.0",
+		"postcss-css-variables": "^0.17.0",
+		"postcss-custom-properties": "^10.0.0",
+		"postcss-import": "^12.0.1",
 		"postcss-preset-env": "^6.7.0",
+		"postcss-rem-to-pixel": "^4.1.2",
 		"tailwindcss": "^1.8.10",
 		"ts-jest": "^26.2.0",
+		"ts-node": "^9.0.0",
 		"typescript": "^3.8.3",
 		"yaml-loader": "^0.6.0"
 	}
