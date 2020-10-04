@@ -1,3 +1,4 @@
+import { hr } from 'date-fns/esm/locale';
 import React from 'react';
 
 interface LinkProps {
@@ -20,9 +21,9 @@ interface ExternalLinkProps {
 }
 
 export const ExternalLink: React.FC<ExternalLinkProps> = (props) => {
-	const { children } = props;
+	const { children, href } = props;
 	return (
-		<Link href="a" target="_blank" rel="noopener">
+		<Link href={href} target="_blank" rel="noopener">
 			{children}
 		</Link>
 	);
