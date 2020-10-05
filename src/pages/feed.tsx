@@ -30,7 +30,7 @@ export const getStaticProps: GetStaticProps<{ props?: unknown }> = async () => {
 				date: post.date,
 				title: post.title,
 				description: '',
-				url: `${config.base_url}/posts/page/${post.slug}`,
+				url: `${config.base_url}/posts/${post.slug}`,
 			});
 		});
 
