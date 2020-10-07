@@ -9,6 +9,7 @@ import TwitterCardMeta from '../components/meta/TwitterCardMeta';
 import { DraftBanner } from '../components/DraftBanner';
 import { getAuthor } from '../lib/authors';
 import { getTag } from '../lib/tags';
+import { IconLabel } from '../components/Icon';
 
 type Props = {
 	title: string;
@@ -64,6 +65,12 @@ export default function Index({
 					<article>
 						<header>
 							<h1>{title}</h1>
+							<div className="space-x-1 my-2">
+								<IconLabel name="article" />
+								<IconLabel name="youtube" />
+								<IconLabel name="code" />
+								<IconLabel name="smartphone" />
+							</div>
 							<div className={'metadata'}>
 								<div>
 									<Date date={date} />

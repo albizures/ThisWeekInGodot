@@ -25,7 +25,6 @@ const Index: React.FC<Props> = (props) => {
 			<BasicMeta url={'/'} />
 			<OpenGraphMeta url={'/'} />
 			<TwitterCardMeta url={'/'} />
-
 			<div className="my-8">
 				<h2 className="text-center text-2xl font-light font-heading">
 					Find out what happened this week in Godot!
