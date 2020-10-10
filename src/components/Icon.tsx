@@ -38,11 +38,20 @@ export const IconLabel: React.FC<LabelProps> = (props) => {
 	);
 };
 
+export const BadgeContainer: React.FC = (props) => {
+	const { children } = props;
+	return (
+		<span className="mr-1 leading-4 px-1 text-xs bg-gray-300 opacity-50 hover:opacity-100 inline-block rounded-full border border-gray-500">
+			{children}
+		</span>
+	);
+};
+
 export const Badge: React.FC<Props> = (props) => {
 	const { name } = props;
 	return (
-		<span className="mr-1 leading-4 px-1 text-xs bg-gray-300 opacity-50 hover:opacity-100 inline-block rounded-full border border-gray-500">
-			<Icon name={name} />
-		</span>
+		<BadgeContainer>
+			<Icon name={name} /> <span className="sr-only">{names[name]}</span>
+		</BadgeContainer>
 	);
 };
