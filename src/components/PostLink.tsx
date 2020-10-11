@@ -44,8 +44,8 @@ export const PostLink: React.FC<Props> = (props) => {
 	return (
 		<span>
 			<a href={link} target="_blank">
-				{label}{' '}
-			</a>
+				{label}
+			</a>{' '}
 			{/* {author && (
 				<>
 					by <Author twitter={author} />
