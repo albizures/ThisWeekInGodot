@@ -3,6 +3,7 @@ import React from 'react';
 import Date from '../components/Date';
 import { DraftBanner } from '../components/DraftBanner';
 import { getAuthor } from '../lib/authors';
+import { IconLabel } from '../components/Icon';
 import config from '../../config.json';
 
 type Props = {
@@ -73,6 +74,12 @@ const Email: React.FC<Props> = (props) => {
 				<div>
 					<div>
 						<h1>{title}</h1>
+						<div className="space-x-1 my-2">
+							<IconLabel name="article" />
+							<IconLabel name="youtube" />
+							<IconLabel name="code" />
+							<IconLabel name="smartphone" />
+						</div>
 						<div className={'metadata'}>
 							<div>
 								<Date date={date} />

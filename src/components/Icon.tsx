@@ -10,12 +10,7 @@ export const Icon: React.FC<Props> = (props) => {
 	const { name } = props;
 	return (
 		<span
-			className="inline-block align-middle w-3 h-3 bg-cover bg-center"
-			style={{
-				backgroundImage: `url('/images/${name}.svg')`,
-				backgroundSize: 'cover',
-				marginBottom: 2,
-			}}
+			className={`inline-block align-middle w-3 h-3 bg-cover bg-center icon ${name}`}
 		></span>
 	);
 };

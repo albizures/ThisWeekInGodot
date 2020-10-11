@@ -180,3 +180,30 @@
 		display: block;
 	}
 }
+
+.icon {
+	background-size: cover;
+	margin-bottom: 2;
+}
+
+.youtube {
+	background-image: url('/images/youtube.png');
+	background-size: cover;
+	margin-bottom: 2;
+}
+.code {
+	background-image: url('/images/code.png');
+	background-size: cover;
+	margin-bottom: 2;
+}
+
+.smartphone {
+	background-image: url('/images/smartphone.png');
+	background-size: cover;
+	margin-bottom: 2;
+}
+.article {
+	background-image: url('/images/article.png');
+	background-size: cover;
+	margin-bottom: 2;
+}
