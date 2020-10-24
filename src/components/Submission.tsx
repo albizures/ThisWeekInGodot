@@ -32,14 +32,16 @@ export const Submission = () => {
 			},
 		).verify();
 
-		const ref = firebase.database().ref('proposals').push().set({
+		const ref = await firebase.database().ref('proposals').push().set({
 			link: refProposal.current.value,
 			added: false,
 		});
+
+		refProposal.current.value = '';
 	};
 	return (
 		<form
-			className="p-6 mt-4 rounded bg-gray-200 shadow-xs"
+			className="py-6 px-2 md:px-6 mt-4 rounded bg-gray-200 border border-gray-300"
 			onSubmit={onSubmit}
 		>
 			<h3 className="text-2xl mb-3 text-center">
