@@ -6,6 +6,9 @@ import Layout from './layouts/email';
 import MDX from '@mdx-js/runtime';
 import matter from 'gray-matter';
 import { MDXProvider } from '@mdx-js/react';
+import config from './lib/config';
+import { Badge } from './components/Icon';
+import { PostLink } from './components/PostLink';
 
 const name = process.argv[2];
 
@@ -28,7 +31,13 @@ const props = {
 	tags: meta.data.tags as string[],
 };
 
-const components = {};
+const components = {
+	Badge,
+	PostLink,
+};
+
+const attrRegex = /((href|src|codebase|cite|background|cite|action|profile|formaction|icon|manifest|archive)=["'])(([.]+\/)|(?:\/)|(?=#))(?!\/)/g;
+const urlRegex = /(url\(["'])(\/)/g;
 
 inlineCSS(
 	renderToStaticMarkup(
@@ -43,6 +52,10 @@ inlineCSS(
 		applyLinkTags: true,
 		removeHtmlSelectors: true,
 	},
-).then((html: string) => {
-	fs.writeFileSync('./dist/email.html', html);
-});
+)
+	.then((html: string) => {
+		return html
+			.replace(attrRegex, `$1${config.base_url}/$4`)
+			.replace(urlRegex, `$1${config.base_url}$2`);
+	})
+	.then((html: string) => fs.writeFileSync('./dist/email.html', html));
