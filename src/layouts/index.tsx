@@ -10,6 +10,7 @@ import { DraftBanner } from '../components/DraftBanner';
 import { getAuthor } from '../lib/authors';
 import { getTag } from '../lib/tags';
 import { IconLabel } from '../components/Icon';
+import { Submission } from '../components/Submission';
 
 type Props = {
 	title: string;
@@ -80,6 +81,9 @@ export default function Index({
 						</header>
 						<div className="mb-8">{content}</div>
 					</article>
+				</div>
+				<div>
+					<Submission />
 				</div>
 			</Layout>
 		);

@@ -1,3 +1,4 @@
+import React from 'react';
 import { GetStaticProps } from 'next';
 import Layout from '../components/Layout';
 import BasicMeta from '../components/meta/BasicMeta';
@@ -7,6 +8,7 @@ import config from '../lib/config';
 import PostList from '../components/PostList';
 import { countPosts, listPostContent, PostContent } from '../lib/posts';
 import { listTags, TagContent } from '../lib/tags';
+import { Input, Label } from '../components/FormFields';
 
 type Props = {
 	posts: PostContent[];
@@ -34,46 +36,29 @@ const Index: React.FC<Props> = (props) => {
 					and demo releases and more.
 				</h4>
 				<form
-					className="p-6 mt-4 rounded bg-gray-200"
+					className="p-6 mt-4 rounded bg-gray-200 shadow-xs"
 					action="https://app.convertkit.com/forms/1707507/subscriptions"
 					method="post"
 				>
 					<div className="grid grid-cols-2 gap-5">
 						<div>
-							<label
-								className="block text-base font-bold leading-5 text-gray-700"
-								htmlFor="first_name"
-							>
-								First name
-							</label>
-							<div className="mt-1 relative rounded-md shadow-sm">
-								<input
-									className="appearance-none border border-gray-400 px-3 py-2 rounded focus:shadow-outline-indigo focus:border-indigo-300 block w-full sm:text-base sm:leading-5"
-									type="text"
-									id="first_name"
-									required
-									name="fields[first_name]"
-									placeholder="Preferred name"
-								/>
-							</div>
+							<Label htmlFor="first_name">First name</Label>
+							<Input
+								name="fields[first_name]"
+								id="first_name"
+								required
+								placeholder="Preferred name"
+							/>
 						</div>
 						<div>
-							<label
-								className="block text-base font-bold leading-5 text-gray-700"
-								htmlFor="email_address"
-							>
-								Email
-							</label>
-							<div className="mt-1 relative rounded-md shadow-sm">
-								<input
-									className="appearance-none border border-gray-400 px-3 py-2 rounded focus:shadow-outline-indigo focus:border-indigo-300 block w-full sm:text-base sm:leading-5"
-									type="email"
-									id="email_address"
-									required
-									name="email_address"
-									placeholder="you@example.com"
-								/>
-							</div>
+							<Label htmlFor="email_address">Email</Label>
+							<Input
+								type="email"
+								id="email_address"
+								required
+								name="email_address"
+								placeholder="you@example.com"
+							/>
 						</div>
 					</div>
 					<div className="w-full flex items-center justify-center mt-5">
