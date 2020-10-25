@@ -9,6 +9,14 @@ html {
 	@apply bg-gray-100 font-body font-light;
 }
 
+@screen md {
+	max-width: 9rem;
+}
+
+.max-w-2xs {
+	max-width: 8rem;
+}
+
 .next-shadow + button {
 	margin-left: -10px;
 }

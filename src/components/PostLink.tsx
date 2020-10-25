@@ -2,7 +2,7 @@ import React from 'react';
 import { Badge, BadgeContainer } from './Icon';
 import { ExternalLink } from './Link';
 
-interface Props {
+export interface PostLinkProps {
 	link: string;
 	type?: 'article' | 'youtube';
 	isMobile?: boolean;
@@ -22,7 +22,7 @@ export const Author: React.FC<AuthorProps> = (props) => {
 	return <ExternalLink href={link}>@{twitter}</ExternalLink>;
 };
 
-export const PostLink: React.FC<Props> = (props) => {
+export const PostLink: React.FC<PostLinkProps> = (props) => {
 	const { link, label, source, type, version, author } = props;
 
 	const sourceCodeBadge = source ? (

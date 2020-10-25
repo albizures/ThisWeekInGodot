@@ -36,7 +36,7 @@ const Index: React.FC<Props> = (props) => {
 					and demo releases and more.
 				</h4>
 				<form
-					className="p-6 mt-4 rounded bg-gray-200 shadow-xs"
+					className="p-6 mt-4 rounded bg-gray-200 shadow-xs border border-gray-300"
 					action="https://app.convertkit.com/forms/1707507/subscriptions"
 					method="post"
 				>

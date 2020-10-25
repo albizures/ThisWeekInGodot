@@ -12,7 +12,11 @@ module.exports = {
 			body: ['Roboto', 'sans-serif'],
 			heading: ['Archivo Black', 'sans-serif'],
 		},
-		extend: {},
+		extend: {
+			fontSize: {
+				xxs: '.50rem',
+			},
+		},
 	},
 	variants: {},
 	plugins: [],

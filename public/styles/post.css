@@ -77,6 +77,15 @@
 	@apply text-indigo-800 underline;
 }
 
+.post .itch-img {
+	width: 168px;
+	height: 133px;
+}
+
+.post .flex a {
+	@apply text-indigo-800 no-underline;
+}
+
 .post li a {
 	@apply text-blue-700 no-underline;
 }

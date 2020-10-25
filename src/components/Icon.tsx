@@ -36,7 +36,7 @@ export const IconLabel: React.FC<LabelProps> = (props) => {
 export const BadgeContainer: React.FC = (props) => {
 	const { children } = props;
 	return (
-		<span className="mr-1 leading-4 px-1 text-xs bg-gray-300 opacity-50 hover:opacity-100 inline-block rounded-full border border-gray-500">
+		<span className="mr-1 leading-4 shadow-sm px-1 text-xs text-gray-900 bg-gray-300 opacity-50 hover:opacity-100 inline-block rounded-full border border-gray-500">
 			{children}
 		</span>
 	);
