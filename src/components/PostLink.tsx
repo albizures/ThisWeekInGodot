@@ -4,10 +4,10 @@ import { ExternalLink } from './Link';
 
 interface Props {
 	link: string;
-	type?: 'article' | 'youtube';
+	type?: 'article' | 'youtube' | 'twitter';
 	isMobile?: boolean;
 	source?: string;
-	label: string;
+	label: string | React.ReactChildren;
 	version?: string;
 	author?: string;
 }
@@ -31,11 +31,12 @@ export const PostLink: React.FC<Props> = (props) => {
 		</a>
 	) : null;
 
-	const typeBadge = type ? (
-		<a href={link} target="_blank">
-			<Badge name={type} />
-		</a>
-	) : null;
+	const typeBadge =
+		type && type !== 'twitter' ? (
+			<a href={link} target="_blank">
+				<Badge name={type} />
+			</a>
+		) : null;
 
 	const versionBadge = version ? (
 		<BadgeContainer>{version}</BadgeContainer>
