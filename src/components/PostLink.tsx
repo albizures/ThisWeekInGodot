@@ -23,13 +23,14 @@ export const Author: React.FC<AuthorProps> = (props) => {
 };
 
 export const PostLink: React.FC<Props> = (props) => {
-	const { link, label, source, type, version, author } = props;
+	const { link, label, source, type, version, author, isMobile } = props;
 
 	const sourceCodeBadge = source ? (
 		<a href={source} target="_blank">
 			<Badge name="code" />
 		</a>
 	) : null;
+	const mobileBadge = isMobile ? <Badge name="smartphone" /> : null;
 
 	const typeBadge =
 		type && type !== 'twitter' ? (
@@ -55,6 +56,7 @@ export const PostLink: React.FC<Props> = (props) => {
 			<span className="whitespace-no-wrap inline-block align-text-bottom">
 				{sourceCodeBadge}
 				{typeBadge}
+				{mobileBadge}
 				{versionBadge}
 			</span>
 		</span>
