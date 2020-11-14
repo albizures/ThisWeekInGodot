@@ -43,6 +43,10 @@
 	@apply m-0 mt-4;
 }
 
+.post li p {
+	@apply m-0 mt-0;
+}
+
 .post .draft-banner p {
 	@apply m-0;
 }
