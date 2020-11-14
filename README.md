@@ -1,5 +1,8 @@
-<img width="250" src="https://raw.githubusercontent.com/albizures/ThisWeekInGodot/master/public/godot_logo.png" />
-<h1 align="center" style="font-size: 6em">This Week in Godot</h1>
+<div align="center">
+   <img width="250" src="https://raw.githubusercontent.com/albizures/ThisWeekInGodot/master/public/godot_logo.png" />
+   <h1 style="font-size: 6em">This Week in Godot</h1>
+</div>
+
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c6f44d34-0570-4ca0-9d3d-cabdaa2b3afb/deploy-status)](https://app.netlify.com/sites/nextjs-netlify-blog-template/deploys)
 [![MADE BY Next.js](https://img.shields.io/badge/MADE%20BY%20Next.js-000000.svg?style=flat&logo=Next.js&labelColor=000)](https://nextjs.org/)
