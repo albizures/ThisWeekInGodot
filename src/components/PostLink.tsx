@@ -2,9 +2,11 @@ import React from 'react';
 import { Badge, BadgeContainer } from './Icon';
 import { ExternalLink } from './Link';
 
+type BadgeType = 'article' | 'youtube' | 'twitter';
+
 interface Props {
 	link: string;
-	type?: 'article' | 'youtube' | 'twitter';
+	type?: BadgeType;
 	isMobile?: boolean;
 	source?: string;
 	label: string | React.ReactChildren;
@@ -22,6 +24,22 @@ export const Author: React.FC<AuthorProps> = (props) => {
 	return <ExternalLink href={link}>@{twitter}</ExternalLink>;
 };
 
+const getBadge = (type: BadgeType, link: string) => {
+	if (!type) {
+		return null;
+	}
+
+	if (type === 'twitter') {
+		return null;
+	}
+
+	return (
+		<a href={link} target="_blank">
+			<Badge name={type} />
+		</a>
+	);
+};
+
 export const PostLink: React.FC<Props> = (props) => {
 	const { link, label, source, type, version, author, isMobile } = props;
 
@@ -32,12 +50,7 @@ export const PostLink: React.FC<Props> = (props) => {
 	) : null;
 	const mobileBadge = isMobile ? <Badge name="smartphone" /> : null;
 
-	const typeBadge =
-		type && type !== 'twitter' ? (
-			<a href={link} target="_blank">
-				<Badge name={type} />
-			</a>
-		) : null;
+	const typeBadge = getBadge(type, link);
 
 	const versionBadge = version ? (
 		<BadgeContainer>{version}</BadgeContainer>
