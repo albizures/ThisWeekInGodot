@@ -9,6 +9,7 @@ import { MDXProvider } from '@mdx-js/react';
 import config from './lib/config';
 import { Badge } from './components/Icon';
 import { PostLink } from './components/PostLink';
+import { TwitterTweetEmbed } from 'react-twitter-embed';
 
 const name = process.argv[2];
 
@@ -34,6 +35,7 @@ const props = {
 const components = {
 	Badge,
 	PostLink,
+	TwitterTweetEmbed,
 };
 
 const attrRegex = /((href|src|codebase|cite|background|cite|action|profile|formaction|icon|manifest|archive)=["'])(([.]+\/)|(?:\/)|(?=#))(?!\/)/g;
