@@ -8,7 +8,7 @@
 		"start": "next start",
 		"export": "next build && next export -o ./dist",
 		"test": "jest",
-		"generate": "yarn generate:css && yarn generate:html",
+		"generate:email": "yarn generate:css && yarn generate:html",
 		"generate:html": "ts-node --project tsconfig.email.json ./src/generate-email.tsx",
 		"generate:css": "NODE_ENV=email postcss public/styles/global.css -o dist/styles.css",
 		"generate:post": "ts-node --project tsconfig.email.json ./src/generate-post.ts"
