@@ -2,6 +2,7 @@ import React from 'react';
 import { GetStaticProps } from 'next';
 import Layout from '../components/Layout';
 import BasicMeta from '../components/meta/BasicMeta';
+import { Submission } from '../components/Submission';
 import OpenGraphMeta from '../components/meta/OpenGraphMeta';
 import TwitterCardMeta from '../components/meta/TwitterCardMeta';
 import config from '../lib/config';
@@ -70,6 +71,9 @@ const Index: React.FC<Props> = (props) => {
 				<div>
 					<PostList posts={posts} tags={tags} pagination={pagination} />
 				</div>
+			</div>
+			<div>
+				<Submission />
 			</div>
 		</Layout>
 	);
