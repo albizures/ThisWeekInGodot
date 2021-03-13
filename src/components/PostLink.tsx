@@ -56,6 +56,10 @@ export const PostLink: React.FC<Props> = (props) => {
 		<BadgeContainer>{version}</BadgeContainer>
 	) : null;
 
+	const hasBadges = Boolean(
+		sourceCodeBadge || typeBadge || mobileBadge || versionBadge,
+	);
+
 	return (
 		<span>
 			<a href={link} target="_blank">
@@ -66,12 +70,14 @@ export const PostLink: React.FC<Props> = (props) => {
 					by <Author twitter={author} />
 				</>
 			)} */}
-			<span className="whitespace-no-wrap inline-block align-text-bottom">
-				{sourceCodeBadge}
-				{typeBadge}
-				{mobileBadge}
-				{versionBadge}
-			</span>
+			{hasBadges && (
+				<span className="whitespace-no-wrap inline-block align-text-bottom">
+					{sourceCodeBadge}
+					{typeBadge}
+					{mobileBadge}
+					{versionBadge}
+				</span>
+			)}
 		</span>
 	);
 };
