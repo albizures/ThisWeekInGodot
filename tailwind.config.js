@@ -12,8 +12,12 @@ module.exports = {
 			body: ['Roboto', 'sans-serif'],
 			heading: ['Archivo Black', 'sans-serif'],
 		},
-		extend: {},
+		extend: {
+			fontSize: {
+				xxs: '0.55rem',
+			},
+		},
 	},
 	variants: {},
-	plugins: [],
+	plugins: [require('@tailwindcss/line-clamp')],
 };

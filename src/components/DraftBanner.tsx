@@ -13,7 +13,7 @@ export const DraftBanner: React.FC = () => {
 				>
 					jose@albizures.com
 				</a>
-				), or even better, you can do a PR at{' '}
+				), or even better, you can make a PR at{' '}
 				<a
 					className="underline text-indigo-800"
 					href="https://github.com/albizures/ThisWeekInGodot"

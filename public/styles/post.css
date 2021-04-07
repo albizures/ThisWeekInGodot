@@ -39,10 +39,6 @@
 	@apply text-gray-500;
 }
 
-.post p {
-	@apply m-0 mt-4;
-}
-
 .post li p {
 	@apply m-0 mt-0;
 }
@@ -75,14 +71,6 @@
 
 .post mark {
 	@apply bg-orange-200 rounded p-1 text-sm;
-}
-
-.post a {
-	@apply text-indigo-800 underline;
-}
-
-.post li a {
-	@apply text-blue-700 no-underline;
 }
 
 .post li a:hover {
@@ -166,10 +154,6 @@
 
 .post kbd {
 	font-family: 'Ubuntu Mono', monospace;
-}
-
-.post img {
-	width: 100%;
 }
 
 @media (min-width: 769px) {
