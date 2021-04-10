@@ -203,7 +203,7 @@ const createPostLink = async (item: Link): Promise<string> => {
 		url,
 	});
 
-	description = description.trim().split('\n')[0];
+	description = description?.trim().split('\n')[0];
 
 	if (item.link.includes('store.steampowered.com') && !author) {
 		try {
@@ -240,7 +240,7 @@ const createPostLink = async (item: Link): Promise<string> => {
 	if (item.language !== '') {
 		link.push(`  label="[${item.language}] ${title}"`);
 	} else {
-		link.push(`  label="${title}"`);
+		link.push(`  label="${item.label || title}"`);
 	}
 	link.push(`  description="${description}"`);
 	link.push(`  publisher="${publisher}"`);

@@ -19,14 +19,17 @@ const Email: React.FC<Props> = (props) => {
 	const isDraft = tags.includes('draft');
 	return (
 		<>
-			<style
-				dangerouslySetInnerHTML={{
-					__html: `
+			<div className="text-center mt-4">
+				<style
+					dangerouslySetInnerHTML={{
+						__html: `
+					html {
+						font-size: 20px
+					}
 					.post { margin: 0 3rem; }
 				`,
-				}}
-			/>
-			<div className="text-center mt-4">
+					}}
+				/>
 				<p>
 					Email isn't displaying correctly?
 					<hr />
@@ -74,12 +77,12 @@ const Email: React.FC<Props> = (props) => {
 				<div>
 					<div>
 						<h1>{title}</h1>
-						<div className="space-x-1 my-2">
+						{/* <div className="space-x-1 my-2">
 							<IconLabel name="article" />
 							<IconLabel name="youtube" />
 							<IconLabel name="code" />
 							<IconLabel name="smartphone" />
-						</div>
+						</div> */}
 						<div className={'metadata'}>
 							<div>
 								<Date date={date} />

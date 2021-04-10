@@ -19,7 +19,7 @@ const getPlugins = () => {
 				preserve: false,
 			},
 			'postcss-rem-to-pixel': {
-				rootValue: 16,
+				rootValue: 20,
 				propList: ['*'],
 			},
 			autoprefixer: {},

@@ -9,11 +9,11 @@ interface Props {
 	date?: string;
 	publisher: string;
 	icon: string;
-	cover: string;
+	cover?: string;
 }
 
 export const Card: React.FC<Props> = (props) => {
-	const {
+	let {
 		label,
 		author,
 		publisher,
@@ -23,10 +23,16 @@ export const Card: React.FC<Props> = (props) => {
 		cover,
 		link,
 	} = props;
+
+	description =
+		// @ts-ignore
+		process.env.NODE_ENV === 'email'
+			? description.substr(0, 90) + '…'
+			: description;
 	return (
-		<div className="grid grid-cols-3 pt-4">
-			<div className="pr-2 col-span-2">
-				<p className="font-bold text-xxs md:text-xs whitespace-no-wrap">
+		<div className="grid grid-cols-3 pb-6">
+			<div className={'pr-2' + cover ? ' col-span-2' : ''}>
+				<p className="mb-1 font-bold text-xxs md:text-xs whitespace-no-wrap">
 					<img
 						className="w-4 h-4 inline-block mr-1"
 						src={icon}
@@ -55,14 +61,16 @@ export const Card: React.FC<Props> = (props) => {
 					</p>
 				)}
 			</div>
-			<div>
-				<a
-					href={link}
-					target="_blank"
-					className="bg-center block bg-contain bg-no-repeat w-full h-full"
-					style={{ backgroundImage: `url('${cover}')` }}
-				/>
-			</div>
+			{cover && (
+				<div>
+					<a
+						href={link}
+						target="_blank"
+						className="bg-center block bg-contain bg-no-repeat w-full h-full"
+						style={{ backgroundImage: `url('${cover}')` }}
+					/>
+				</div>
+			)}
 		</div>
 	);
 };

@@ -66,12 +66,12 @@ export default function Index({
 					<article>
 						<header>
 							<h1>{title}</h1>
-							<div className="space-x-1 my-2">
+							{/* <div className="space-x-1 my-2">
 								<IconLabel name="article" />
 								<IconLabel name="youtube" />
 								<IconLabel name="code" />
 								<IconLabel name="smartphone" />
-							</div>
+							</div> */}
 							<div className={'metadata'}>
 								<div>
 									<Date date={date} />

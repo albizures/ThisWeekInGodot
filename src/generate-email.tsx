@@ -9,6 +9,7 @@ import { MDXProvider } from '@mdx-js/react';
 import config from './lib/config';
 import { Badge } from './components/Icon';
 import { PostLink } from './components/PostLink';
+import { Card } from './components/Card';
 import { TwitterTweetEmbed } from 'react-twitter-embed';
 
 const name = process.argv[2];
@@ -36,10 +37,14 @@ const components = {
 	Badge,
 	PostLink,
 	TwitterTweetEmbed,
+	Card,
 };
 
 const attrRegex = /((href|src|codebase|cite|background|cite|action|profile|formaction|icon|manifest|archive)=["'])(([.]+\/)|(?:\/)|(?=#))(?!\/)/g;
 const urlRegex = /(url\(["'])(\/)/g;
+
+// @ts-ignore
+process.env.NODE_ENV = 'email';
 
 inlineCSS(
 	renderToStaticMarkup(

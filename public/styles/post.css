@@ -7,11 +7,11 @@
 .post h4,
 .post h5,
 .post h6 {
-	@apply m-0 mt-8 leading-8 font-heading;
+	@apply m-0 mt-6 leading-8 font-heading;
 }
 
 .post h2 {
-	@apply text-2xl;
+	@apply text-2xl mb-6;
 }
 
 .post h2::before {
