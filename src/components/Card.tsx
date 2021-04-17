@@ -24,11 +24,13 @@ export const Card: React.FC<Props> = (props) => {
 		link,
 	} = props;
 
-	description =
-		// @ts-ignore
-		process.env.NODE_ENV === 'email'
-			? description.substr(0, 90) + '…'
-			: description;
+	// @ts-ignore
+	const isMail = process.env.NODE_ENV === 'email';
+
+	if (description) {
+		description = isMail ? description.substr(0, 90) + '…' : description;
+	}
+
 	return (
 		<div className="grid grid-cols-3 pb-6">
 			<div className={'pr-2' + cover ? ' col-span-2' : ''}>
@@ -61,7 +63,7 @@ export const Card: React.FC<Props> = (props) => {
 					</p>
 				)}
 			</div>
-			{cover && (
+			{cover && !isMail && (
 				<div>
 					<a
 						href={link}
