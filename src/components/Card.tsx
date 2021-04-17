@@ -5,7 +5,7 @@ interface Props {
 	label: string;
 	link: string;
 	author: string;
-	description: string;
+	description?: string;
 	date?: string;
 	publisher: string;
 	icon: string;
@@ -40,23 +40,27 @@ export const Card: React.FC<Props> = (props) => {
 						src={icon}
 						alt={publisher}
 					/>
-					<span className="align-middle">{author}</span>{' '}
-					<span className="text-gray-700">in</span> <span>{publisher}</span>
+					<span>{author}</span> <span className="text-gray-700">in</span>{' '}
+					<span>{publisher}</span>
 				</p>
 				<a
 					href={link}
 					target="_blank"
+					data-goatcounter-click="external"
 					className="line-clamp-3 md:line-clamp-2 text-sm md:text-lg font-heading leading-tight overflow-hidden"
 				>
 					{label}
 				</a>
-				<a
-					href={link}
-					target="_blank"
-					className="text-gray-700 line-clamp-1 text-xs overflow-hidden"
-				>
-					{description}
-				</a>
+				{description && (
+					<a
+						href={link}
+						target="_blank"
+						data-goatcounter-click="external"
+						className="text-gray-700 line-clamp-1 text-xs overflow-hidden"
+					>
+						{description}
+					</a>
+				)}
 				{/* {date && (
 					<p className="text-xxs md:text-xs text-gray-700 leading-none">
 						{format(new Date(date), 'MMM dd')}
@@ -68,6 +72,7 @@ export const Card: React.FC<Props> = (props) => {
 					<a
 						href={link}
 						target="_blank"
+						data-goatcounter-click="external"
 						className="bg-center block bg-contain bg-no-repeat w-full h-full"
 						style={{ backgroundImage: `url('${cover}')` }}
 					/>
