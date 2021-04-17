@@ -57,11 +57,11 @@ export const Card: React.FC<Props> = (props) => {
 				>
 					{description}
 				</a>
-				{date && (
+				{/* {date && (
 					<p className="text-xxs md:text-xs text-gray-700 leading-none">
 						{format(new Date(date), 'MMM dd')}
 					</p>
-				)}
+				)} */}
 			</div>
 			{cover && !isMail && (
 				<div>
