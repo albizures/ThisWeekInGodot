@@ -203,6 +203,13 @@ const createPostLink = async (item: Link): Promise<string> => {
 		url,
 	});
 
+	if (item.link.includes('youtube.com')) {
+		item.link = item.link.replace(
+			'https://www.youtube.com/watch?v=',
+			'https://youtu.be/',
+		);
+	}
+
 	description = description?.trim().split('\n')[0];
 
 	if (item.link.includes('store.steampowered.com') && !author) {
