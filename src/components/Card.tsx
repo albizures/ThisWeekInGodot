@@ -31,9 +31,22 @@ export const Card: React.FC<Props> = (props) => {
 		description = isMail ? description.substr(0, 90) + '…' : description;
 	}
 
+	if (isMail) {
+		return (
+			<a
+				href={link}
+				target="_blank"
+				data-goatcounter-click="external"
+				className="text-sm md:text-lg font-heading leading-tight"
+			>
+				{label}
+			</a>
+		);
+	}
+
 	return (
 		<div className="grid grid-cols-3 pb-6">
-			<div className={'pr-2' + cover ? ' col-span-2' : ''}>
+			<div className={'pr-2 ddd' + (cover ? ' col-span-2' : '')}>
 				<p className="mb-1 font-bold text-xxs md:text-xs whitespace-no-wrap">
 					<img
 						className="w-4 h-4 inline-block mr-1"
@@ -67,7 +80,7 @@ export const Card: React.FC<Props> = (props) => {
 					</p>
 				)} */}
 			</div>
-			{cover && !isMail && (
+			{cover && (
 				<div>
 					<a
 						href={link}
