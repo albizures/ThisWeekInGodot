@@ -12,6 +12,7 @@ import titleScraper from 'metascraper-title';
 import urlScraper from 'metascraper-url';
 import faviconScraper from 'metascraper-logo-favicon';
 import youtubeScraper from 'metascraper-youtube';
+import { Sections } from './types';
 
 const isTwitch = (link: string) => {
 	return link.includes('twitch.tv');
@@ -150,6 +151,7 @@ interface Link {
 	type: string;
 	source: string;
 	language: string;
+	section: string;
 }
 
 const headers = {
@@ -176,16 +178,7 @@ const getSteamAuthor = async (link: string): Promise<string> => {
 	return data.developers[0];
 };
 
-const sections = [
-	'Official',
-	'News',
-	'Miscellaneous',
-	'Tutorials',
-	'Libraries Assets and Add-ons',
-	'DevLogs',
-	'Made with Godot',
-	'Some Cool Tweets',
-];
+const sections = Object.values(Sections);
 
 const createPostLink = async (item: Link): Promise<string> => {
 	const { body: html, url } = await got(item.link, { headers });
@@ -244,6 +237,7 @@ const createPostLink = async (item: Link): Promise<string> => {
 	link.push('<Card');
 	link.push(`  author="${author}"`);
 	link.push(`  link="${item.link}"`);
+	link.push(`  section="${item.section}"`);
 	if (item.language !== '') {
 		link.push(`  label="[${item.language}] ${title}"`);
 	} else {
@@ -287,6 +281,7 @@ const data = result.data
 			type,
 			language,
 			source,
+			section,
 		});
 
 		return links;

@@ -43,6 +43,14 @@
 	@apply m-0 mt-0;
 }
 
+.post li a {
+	@apply text-blue-700 no-underline;
+}
+
+.post p {
+	@apply m-0 mt-4;
+}
+
 .post .draft-banner p {
 	@apply m-0;
 }

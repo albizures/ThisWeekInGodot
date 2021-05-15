@@ -1,5 +1,5 @@
 import React from 'react';
-import { format } from 'date-fns';
+import { Sections } from '../types';
 
 interface Props {
 	label: string;
@@ -10,39 +10,39 @@ interface Props {
 	publisher: string;
 	icon: string;
 	cover?: string;
+	section: Sections;
 }
 
 export const Card: React.FC<Props> = (props) => {
-	let {
-		label,
-		author,
-		publisher,
-		description,
-		icon,
-		date,
-		cover,
-		link,
-	} = props;
+	let { label, author, publisher, description, icon, cover, link, section } =
+		props;
 
 	// @ts-ignore
 	const isMail = process.env.NODE_ENV === 'email';
 
-	if (description) {
-		description = isMail ? description.substr(0, 90) + '…' : description;
-	}
-
 	if (isMail) {
+		if (description.length > 90) {
+			description = description.substr(0, 90) + '…';
+		}
+
+		const withDescription = [
+			Sections.MadeWithGodot,
+			Sections.LibrariesAssetsAddOns,
+		].includes(section);
 		return (
 			<a
 				href={link}
 				target="_blank"
-				data-goatcounter-click="external"
 				className="text-sm md:text-lg font-heading leading-tight"
 			>
-				{label}
+				{label} {withDescription && { description }}
 			</a>
 		);
 	}
+
+	let clickData = section.replace(' ', '-').replace("'", '');
+
+	clickData = `external-${clickData}`;
 
 	return (
 		<div className="grid grid-cols-3 pb-6">
@@ -59,7 +59,7 @@ export const Card: React.FC<Props> = (props) => {
 				<a
 					href={link}
 					target="_blank"
-					data-goatcounter-click="external"
+					data-goatcounter-click={clickData}
 					className="line-clamp-3 md:line-clamp-2 text-sm md:text-lg font-heading leading-tight overflow-hidden"
 				>
 					{label}
@@ -68,7 +68,7 @@ export const Card: React.FC<Props> = (props) => {
 					<a
 						href={link}
 						target="_blank"
-						data-goatcounter-click="external"
+						data-goatcounter-click={clickData}
 						className="text-gray-700 line-clamp-1 text-xs overflow-hidden"
 					>
 						{description}
@@ -85,7 +85,7 @@ export const Card: React.FC<Props> = (props) => {
 					<a
 						href={link}
 						target="_blank"
-						data-goatcounter-click="external"
+						data-goatcounter-click={clickData}
 						className="bg-center block bg-contain bg-no-repeat w-full h-full"
 						style={{ backgroundImage: `url('${cover}')` }}
 					/>
