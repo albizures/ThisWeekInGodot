@@ -266,7 +266,7 @@ const createTweetLink = (item: Link): string => {
 const data = result.data
 	.slice(1)
 	.reduce<Links>((links: Links, item: string[]) => {
-		const [link, label, section, type, language, source] = item;
+		const [link, label, type, section, language, source] = item;
 		if (!link) {
 			return links;
 		}
