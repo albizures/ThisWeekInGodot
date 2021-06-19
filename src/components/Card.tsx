@@ -35,7 +35,7 @@ export const Card: React.FC<Props> = (props) => {
 				target="_blank"
 				className="text-sm md:text-lg font-heading leading-tight"
 			>
-				{label} {withDescription && description}
+				{label}: {withDescription && description}
 			</a>
 		);
 	}
