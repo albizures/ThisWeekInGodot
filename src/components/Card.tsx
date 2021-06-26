@@ -35,7 +35,7 @@ export const Card: React.FC<Props> = (props) => {
 				target="_blank"
 				className="text-sm md:text-lg font-heading leading-tight"
 			>
-				{label}: {withDescription && description}
+				{label} {withDescription && `:${description}`}
 			</a>
 		);
 	}
@@ -45,7 +45,7 @@ export const Card: React.FC<Props> = (props) => {
 	clickData = `external-${clickData}`;
 
 	return (
-		<div className="grid grid-cols-3 pb-6">
+		<div className={'grid pb-6' + (cover ? ' grid-cols-3' : ' grid-cols-1')}>
 			<div className={'pr-2 ddd' + (cover ? ' col-span-2' : '')}>
 				<p className="mb-1 font-bold text-xxs md:text-xs whitespace-no-wrap">
 					<img
