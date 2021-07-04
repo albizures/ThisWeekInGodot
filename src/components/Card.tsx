@@ -21,7 +21,7 @@ export const Card: React.FC<Props> = (props) => {
 	const isMail = process.env.NODE_ENV === 'email';
 
 	if (isMail) {
-		if (description.length > 90) {
+		if (description && description.length > 90) {
 			description = description.substr(0, 90) + '…';
 		}
 
