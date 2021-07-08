@@ -25,17 +25,19 @@ export const Card: React.FC<Props> = (props) => {
 			description = description.substr(0, 90) + '…';
 		}
 
-		const withDescription = [
-			Sections.MadeWithGodot,
-			Sections.LibrariesAssetsAddOns,
-		].includes(section);
+		const withDescription = Boolean(
+			[Sections.MadeWithGodot, Sections.LibrariesAssetsAddOns].includes(
+				section,
+			) && description.trim(),
+		);
 		return (
 			<a
 				href={link}
 				target="_blank"
 				className="text-sm md:text-lg font-heading leading-tight"
 			>
-				{label} {withDescription && `:${description}`}
+				{label.trim()}
+				{withDescription && `: ${description}`}
 			</a>
 		);
 	}
