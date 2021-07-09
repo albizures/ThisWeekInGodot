@@ -29,14 +29,11 @@ export const getStaticProps: GetStaticProps<{ props?: unknown }> =
 					return !post.tags.includes('draft');
 				})
 				.map((post) => {
-					return inlineCSS(
-						compile(post.content, Layouts.post, post),
-						{
-							url: `file://${process.cwd()}/`,
-							applyLinkTags: true,
-							removeHtmlSelectors: true,
-						},
-					)
+					return inlineCSS(compile(post.content, Layouts.rss, post), {
+						url: `file://${process.cwd()}/`,
+						applyLinkTags: true,
+						removeHtmlSelectors: true,
+					})
 						.then(absolutePaths)
 						.then((html: string) => {
 							rss.item({

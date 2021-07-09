@@ -1,9 +1,6 @@
 import React from 'react';
-// import Author from '../components/Author';
 import Date from '../components/Date';
 import { DraftBanner } from '../components/DraftBanner';
-import { getAuthor } from '../lib/authors';
-import { IconLabel } from '../components/Icon';
 import config from '../../config.json';
 
 type Props = {
@@ -73,7 +70,9 @@ const Email: React.FC<Props> = (props) => {
 				</div>
 			</nav>
 			<link rel="stylesheet" href="./dist/styles.css" />
-			<div className="max-w-lg mx-auto">{isDraft && <DraftBanner />}</div>
+			<div className="max-w-lg mx-auto">
+				{isDraft && <DraftBanner />}
+			</div>
 			<div className="post max-w-lg mx-auto">
 				<div>
 					<div>

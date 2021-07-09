@@ -1,3 +1,4 @@
+import React from 'react';
 import Head from 'next/head';
 import config from '../../lib/config';
 
@@ -28,7 +29,9 @@ export default function OpenGraphMeta({
 			/>
 			<meta
 				property="og:image"
-				content={image ? image : config.base_url + '/images/banner.png'}
+				content={
+					image ? image : config.base_url + '/images/banner.png'
+				}
 			/>
 			<meta property="og:type" content="article" />
 		</Head>

@@ -6,7 +6,8 @@ export type AuthorContent = {
 	readonly introduction: string;
 };
 
-const authorMap: { [key: string]: AuthorContent } = generateAuthorMap();
+const authorMap: { [key: string]: AuthorContent } =
+	generateAuthorMap();
 
 function generateAuthorMap(): { [key: string]: AuthorContent } {
 	let result: { [key: string]: AuthorContent } = {};

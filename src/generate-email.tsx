@@ -1,3 +1,5 @@
+/// <reference path="../ts-node.d.ts" />
+
 import fs from 'fs';
 import inlineCSS from 'inline-css';
 import { compileFile, Layouts, absolutePaths } from './compile-mdx';
@@ -20,4 +22,6 @@ inlineCSS(compileFile(postPath, Layouts.email), {
 	removeHtmlSelectors: true,
 })
 	.then(absolutePaths)
-	.then((html: string) => fs.writeFileSync('./dist/email.html', html));
+	.then((html: string) =>
+		fs.writeFileSync('./dist/email.html', html),
+	);

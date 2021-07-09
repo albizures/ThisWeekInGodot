@@ -1,6 +1,7 @@
 import fs from 'fs';
 import MDX from '@mdx-js/runtime';
 import matter from 'gray-matter';
+import React from 'react';
 import { TwitterTweetEmbed } from 'react-twitter-embed';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { MDXProvider } from '@mdx-js/react';
@@ -14,6 +15,7 @@ import config from './lib/config';
 export enum Layouts {
 	email,
 	post,
+	rss,
 }
 
 const components = {
@@ -66,12 +68,20 @@ export const compile = (
 
 	const Layout = layout === Layouts.email ? EmailLayout : PostLayout;
 
+	const styles =
+		layout === Layouts.rss ? (
+			<link rel="stylesheet" href="./dist/styles.css" />
+		) : null;
+
 	return renderToStaticMarkup(
-		<Layout {...props}>
-			<MDXProvider components={components}>
-				<MDX>{content}</MDX>
-			</MDXProvider>
-		</Layout>,
+		<>
+			{styles}
+			<Layout {...props}>
+				<MDXProvider components={components}>
+					<MDX>{content}</MDX>
+				</MDXProvider>
+			</Layout>
+		</>,
 	);
 };
 

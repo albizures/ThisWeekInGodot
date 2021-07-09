@@ -4,14 +4,15 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev -p 1234",
+		"prebuild": "yarn generate:css",
 		"build": "next build",
 		"start": "next start",
 		"export": "next build && next export -o ./dist",
 		"test": "jest",
 		"generate:email": "yarn generate:css && yarn generate:html",
-		"generate:html": "ts-node --project tsconfig.email.json ./src/generate-email.tsx",
+		"generate:html": "ts-node --require ./yaml-register.js --project tsconfig.email.json ./src/generate-email.tsx",
 		"generate:css": "NODE_ENV=email postcss public/styles/global.css -o dist/styles.css",
-		"generate:post": "ts-node --project tsconfig.email.json ./src/generate-post.ts"
+		"generate:post": "ts-node --require ./yaml-register.js --project tsconfig.email.json ./src/generate-post.ts"
 	},
 	"dependencies": {
 		"@svgr/webpack": "^5.4.0",

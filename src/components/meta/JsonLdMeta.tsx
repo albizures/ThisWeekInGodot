@@ -1,3 +1,4 @@
+import React from 'react';
 import { BlogPosting } from 'schema-dts';
 import { jsonLdScriptProps } from 'react-schemaorg';
 import config from '../../lib/config';

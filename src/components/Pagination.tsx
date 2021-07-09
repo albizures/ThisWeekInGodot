@@ -1,3 +1,4 @@
+import React from 'react';
 import { generatePagination } from '../lib/pagination';
 import Link from 'next/link';
 

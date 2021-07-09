@@ -1,3 +1,4 @@
+import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { Footer } from './Footer';
@@ -13,7 +14,10 @@ export default function Layout({ children }: Props) {
 		<div className="root container px-2 max-w-screen-md">
 			<Head>
 				<meta charSet="utf-8" />
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<meta
+					name="viewport"
+					content="width=device-width, initial-scale=1"
+				/>
 				<link rel="manifest" href="/site.webmanifest" />
 				<link
 					href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto:ital,wght@0,300;1,300&display=swap"
