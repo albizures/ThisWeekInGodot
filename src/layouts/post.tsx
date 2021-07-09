@@ -13,7 +13,7 @@ import { Submission } from '../components/Submission';
 
 type Props = {
 	title: string;
-	date: string;
+	date: string | Date;
 	slug: string;
 	description: string;
 	tags: string[];

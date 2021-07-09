@@ -12,6 +12,7 @@ type Props = {
 	slug: string;
 	tags: string[];
 	author: string;
+	description: string;
 };
 
 const Email: React.FC<Props> = (props) => {
@@ -77,16 +78,9 @@ const Email: React.FC<Props> = (props) => {
 				<div>
 					<div>
 						<h1>{title}</h1>
-						{/* <div className="space-x-1 my-2">
-							<IconLabel name="article" />
-							<IconLabel name="youtube" />
-							<IconLabel name="code" />
-							<IconLabel name="smartphone" />
-						</div> */}
 						<div className={'metadata'}>
 							<div>
 								<Date date={date} />
-								{/* <Author author={getAuthor(author)} /> */}
 							</div>
 						</div>
 					</div>

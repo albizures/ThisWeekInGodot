@@ -1,11 +1,11 @@
-import { GetStaticProps } from 'next';
-import Link from 'next/link';
 import fs from 'fs';
+import RSS from 'rss';
+import Link from 'next/link';
+import { GetStaticProps } from 'next';
 import { listPostContent } from '../lib/posts';
+import { Layouts, compile, absolutePaths } from '../compile-mdx';
 import config from '../lib/config';
 import Layout from '../components/Layout';
-
-import RSS from 'rss';
 
 const rss = new RSS({
 	title: config.site_title,
@@ -29,7 +29,7 @@ export const getStaticProps: GetStaticProps<{ props?: unknown }> = async () => {
 			rss.item({
 				date: post.date,
 				title: post.title,
-				description: '',
+				description: compile(post.content, Layouts.post, post),
 				url: `${config.base_url}/posts/${post.slug}`,
 			});
 		});
