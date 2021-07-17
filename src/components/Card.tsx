@@ -14,8 +14,16 @@ interface Props {
 }
 
 export const Card: React.FC<Props> = (props) => {
-	let { label, author, publisher, description, icon, cover, link, section } =
-		props;
+	let {
+		label,
+		author,
+		publisher,
+		description,
+		icon,
+		cover,
+		link,
+		section,
+	} = props;
 
 	// @ts-ignore
 	const isMail = process.env.NODE_ENV === 'email';
@@ -26,9 +34,10 @@ export const Card: React.FC<Props> = (props) => {
 		}
 
 		const withDescription = Boolean(
-			[Sections.MadeWithGodot, Sections.LibrariesAssetsAddOns].includes(
-				section,
-			) && description.trim(),
+			[
+				Sections.MadeWithGodot,
+				Sections.LibrariesAssetsAddOns,
+			].includes(section) && description.trim(),
 		);
 		return (
 			<a
@@ -47,15 +56,20 @@ export const Card: React.FC<Props> = (props) => {
 	clickData = `external-${clickData}`;
 
 	return (
-		<div className={'grid pb-6' + (cover ? ' grid-cols-3' : ' grid-cols-1')}>
+		<div
+			className={
+				'grid pb-8' + (cover ? ' grid-cols-3' : ' grid-cols-1')
+			}
+		>
 			<div className={'pr-2 ddd' + (cover ? ' col-span-2' : '')}>
-				<p className="mb-1 font-bold text-xxs md:text-xs whitespace-no-wrap">
+				<p className="mb-1 author font-bold text-xxs md:text-xs whitespace-no-wrap">
 					<img
 						className="w-4 h-4 inline-block mr-1"
 						src={icon}
 						alt={publisher}
 					/>
-					<span>{author}</span> <span className="text-gray-700">in</span>{' '}
+					<span>{author}</span>{' '}
+					<span className="text-gray-700">in</span>{' '}
 					<span>{publisher}</span>
 				</p>
 				<a

@@ -47,7 +47,7 @@
 	@apply text-blue-700 no-underline;
 }
 
-.post p {
+.post p:not(.author) {
 	@apply m-0 mt-4;
 }
 
