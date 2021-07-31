@@ -40,14 +40,22 @@ export const Card: React.FC<Props> = (props) => {
 			].includes(section) && description.trim(),
 		);
 		return (
-			<a
-				href={link}
-				target="_blank"
-				className="text-sm md:text-lg font-heading leading-tight"
-			>
-				{label.trim()}
-				{withDescription && `: ${description}`}
-			</a>
+			<>
+				<a
+					href={link}
+					target="_blank"
+					className="text-sm md:text-lg font-heading leading-tight"
+				>
+					{label.trim()}
+					{withDescription && `: ${description}`}
+				</a>
+				<p className="mb-1 author font-bold text-xxs md:text-xs whitespace-no-wrap">
+					<span className="text-gray-700">by</span>{' '}
+					<span>{author}</span>{' '}
+					<span className="text-gray-700">in</span>{' '}
+					<span>{publisher}</span>
+				</p>
+			</>
 		);
 	}
 
