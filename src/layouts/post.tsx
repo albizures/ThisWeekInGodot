@@ -77,6 +77,20 @@ export const PostLayout: React.FC<Props> = (props) => {
 						</div>
 					</header>
 					<div className="mb-8">{children}</div>
+					<div>
+						<h2>✋ Before you go</h2>
+						<p className="pb-4">
+							Hey, this is José speaking, the maintainer of this
+							newsletter, and if you find it helpful, please consider{' '}
+							<a
+								className="underline text-blue-800"
+								href="https://www.buymeacoffee.com/albizures"
+							>
+								buying me a coffee
+							</a>{' '}
+							and support my work
+						</p>
+					</div>
 				</article>
 			</div>
 			<div>

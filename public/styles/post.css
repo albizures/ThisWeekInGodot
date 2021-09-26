@@ -203,3 +203,7 @@
 	background-size: cover;
 	margin-bottom: 2;
 }
+
+a[href*='mailto'] {
+	@apply underline text-blue-800;
+}
