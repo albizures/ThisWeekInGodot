@@ -13,6 +13,7 @@ import urlScraper from 'metascraper-url';
 import faviconScraper from 'metascraper-logo-favicon';
 import youtubeScraper from 'metascraper-youtube';
 import { Sections } from './types';
+import { Label } from './components/FormFields';
 
 const isTwitch = (link: string) => {
 	return link.includes('twitch.tv');
@@ -35,7 +36,10 @@ const scraper = metascraper([
 		//@ts-ignore
 		title: [
 			({ htmlDom: $, url }) => {
-				return isTwitch(url) && $('h2[data-a-target="stream-title"]').text();
+				return (
+					isTwitch(url) &&
+					$('h2[data-a-target="stream-title"]').text()
+				);
 			},
 		],
 		description: [
@@ -139,7 +143,10 @@ const scraper = metascraper([
 					return;
 				}
 
-				return $('.media-body .text-muted').text().split(';')[2].trim();
+				return $('.media-body .text-muted')
+					.text()
+					.split(';')[2]
+					.trim();
 			},
 		],
 	},
@@ -161,7 +168,9 @@ const headers = {
 
 type Links = Record<string, Link[]>;
 
-const result = papaparse.parse(fs.readFileSync('./links.csv', 'utf8'));
+const result = papaparse.parse(
+	fs.readFileSync('./links.csv', 'utf8'),
+);
 
 const getSteamAuthor = async (link: string): Promise<string> => {
 	const { pathname } = new URL(link);
@@ -179,6 +188,17 @@ const getSteamAuthor = async (link: string): Promise<string> => {
 };
 
 const sections = Object.values(Sections);
+
+const labelSections = {
+	[Sections.DevLogs]: `🧑‍💻 ${Sections.DevLogs}`,
+	[Sections.LibrariesAssetsAddOns]: `🛠 Libraries Assets and Plugins`,
+	[Sections.MadeWithGodot]: `🤖 ${Sections.MadeWithGodot}`,
+	[Sections.Miscellaneous]: `🤷 ${Sections.Miscellaneous}`,
+	[Sections.News]: `📰 ${Sections.News}`,
+	[Sections.Official]: `👮 ${Sections.Official}`,
+	[Sections.SomeCoolTweets]: `🐦 ${Sections.SomeCoolTweets}`,
+	[Sections.Tutorials]: `✍️ ${Sections.Tutorials}`,
+};
 
 const createPostLink = async (item: Link): Promise<string> => {
 	const { body: html, url } = await got(item.link, { headers });
@@ -296,7 +316,7 @@ const generete = async () => {
 			continue;
 		}
 
-		post = `${post}\n\n## ${section}`;
+		post = `${post}\n\n## ${labelSections[section]}`;
 
 		for (let index = 0; index < data[section].length; index++) {
 			const link = data[section][index];
@@ -309,7 +329,9 @@ const generete = async () => {
 
 				post = `${post}\n\n${item}`;
 			} catch (error) {
-				console.error(`🔴 Unable to generate card for '${link.link}'`);
+				console.error(
+					`🔴 Unable to generate card for '${link.link}'`,
+				);
 				console.error(error);
 			}
 		}

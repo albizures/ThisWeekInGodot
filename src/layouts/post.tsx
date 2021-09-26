@@ -80,8 +80,9 @@ export const PostLayout: React.FC<Props> = (props) => {
 					<div>
 						<h2>✋ Before you go</h2>
 						<p className="pb-4">
-							Hey, this is José speaking, the maintainer of this
-							newsletter, and if you find it helpful, please consider{' '}
+							Hey, José here, the maintainer of this newsletter, I
+							hope you enjoy this issue, and if you find it helpful,
+							please consider{' '}
 							<a
 								className="underline text-blue-800"
 								href="https://www.buymeacoffee.com/albizures"
