@@ -85,7 +85,7 @@ export const PostLayout: React.FC<Props> = (props) => {
 							please consider{' '}
 							<a
 								className="underline text-blue-800"
-								href="https://www.buymeacoffee.com/albizures"
+								href="https://ko-fi.com/albizures"
 							>
 								buying me a coffee
 							</a>{' '}
