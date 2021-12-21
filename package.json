@@ -19,6 +19,7 @@
 		"@svgr/webpack": "^5.4.0",
 		"@tailwindcss/line-clamp": "^0.2.0",
 		"@types/js-yaml": "^3.12.5",
+		"await-to-js": "^3.0.0",
 		"date-fns": "^2.11.1",
 		"firebase": "^7.24.0",
 		"gray-matter": "^4.0.3",

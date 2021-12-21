@@ -1,4 +1,5 @@
 import fs from 'fs';
+import { to } from 'await-to-js';
 import papaparse from 'papaparse';
 import got from 'got';
 import metascraper from 'metascraper';
@@ -13,7 +14,6 @@ import urlScraper from 'metascraper-url';
 import faviconScraper from 'metascraper-logo-favicon';
 import youtubeScraper from 'metascraper-youtube';
 import { Sections } from './types';
-import { Label } from './components/FormFields';
 
 const isTwitch = (link: string) => {
 	return link.includes('twitch.tv');
@@ -201,7 +201,28 @@ const labelSections = {
 };
 
 const createPostLink = async (item: Link): Promise<string> => {
-	const { body: html, url } = await got(item.link, { headers });
+	let [error, response] = await to(got(item.link, { headers }));
+
+	if (error) {
+		console.log(error);
+		console.log(item);
+
+		throw new Error(`Unable to get a response from ${item.link}`);
+	}
+
+	const { body: html, url } = response;
+	const [scraperError, data] = await to(
+		scraper({
+			html,
+			url,
+		}),
+	);
+	if (scraperError) {
+		console.log(scraperError);
+		console.log(item);
+		throw new Error(`Unable to get a response from ${item.link}`);
+	}
+
 	let {
 		author,
 		date,
@@ -211,10 +232,7 @@ const createPostLink = async (item: Link): Promise<string> => {
 		image,
 		// @ts-ignore
 		logo,
-	} = await scraper({
-		html,
-		url,
-	});
+	} = data;
 
 	if (item.link.includes('youtube.com')) {
 		item.link = item.link.replace(
