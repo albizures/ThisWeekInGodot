@@ -36,28 +36,30 @@ const scraper = metascraper([
 		//@ts-ignore
 		title: [
 			({ htmlDom: $, url }) => {
-				return (
-					isTwitch(url) &&
-					$('h2[data-a-target="stream-title"]').text()
-				);
+				if (	isTwitch(url)) {
+					return $('h2[data-a-target="stream-title"]').text()
+				}
 			},
 		],
 		description: [
 			({ htmlDom: $, url }) => {
-				return isTwitch(url) && ' ';
+				if (isTwitch(url)) {
+					return ' '
+				}
 			},
 		],
 		publisher: [
 			({ htmlDom: $, url }) => {
-				return isGodotAssetLibrary(url) && 'Godot Asset Library';
+				if ( isGodotAssetLibrary(url)) {
+					return 'Godot Asset Library';
+				}
 			},
 		],
 		logo: [
 			({ htmlDom: $, url }) => {
-				return (
-					isGodotAssetLibrary(url) &&
-					'https://godotengine.org/themes/godotengine/assets/favicon.png'
-				);
+				if ( isGodotAssetLibrary(url)) {
+					return 'https://godotengine.org/themes/godotengine/assets/favicon.png'
+				}
 			},
 		],
 		image: [
@@ -84,7 +86,9 @@ const scraper = metascraper([
 		//@ts-ignore
 		author: [
 			({ htmlDom, url }) => {
-				return isGameFromScratch(url) && 'Gamefromscratch';
+				if (isGameFromScratch(url)) {
+					return 'Gamefromscratch'
+				}
 			},
 			// youtube
 			({ htmlDom: $ }) => {
@@ -94,12 +98,6 @@ const scraper = metascraper([
 			},
 			({ htmlDom: $, url }) => {
 				if (isTwitch(url)) {
-					console.log(
-						$('.metadata-layout__support a h1').text(),
-						$('.metadata-layout__support').html(),
-						$.html(),
-					);
-
 					return $('.metadata-layout__support a h1').text();
 				}
 			},
@@ -241,7 +239,7 @@ const createPostLink = async (item: Link): Promise<string> => {
 		);
 	}
 
-	description = description?.trim().split('\n')[0];
+	description = description && description.trim().split('\n')[0];
 
 	if (item.link.includes('store.steampowered.com') && !author) {
 		try {
@@ -268,6 +266,7 @@ const createPostLink = async (item: Link): Promise<string> => {
 	if (missingData) {
 		console.log(`Generating "${title} ${item.link}"`);
 		console.log(`\tmissing data: ${missingData}`);
+		
 	}
 
 	const link = [];
